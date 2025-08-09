@@ -1,0 +1,18 @@
+{
+  "DISCORD_TOKEN": "",
+
+  "discordGuild": "",
+  "discordChannel": "",
+
+  "frequencies": [
+    { "lessThan":   7, "frequency":  1, "warning": true },
+    { "lessThan":  15, "frequency":  1 },
+    { "lessThan":  30, "frequency":  2 },
+    { "lessThan":  60, "frequency":  3 },
+    { "lessThan":  90, "frequency":  7 },
+    { "lessThan": 120, "frequency": 14 }
+  ],
+  "monitors": [
+    { "name": "", "date": "" }
+  ]
+}

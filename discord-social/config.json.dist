@@ -1,0 +1,18 @@
+{
+  "DISCORD_TOKEN": "",
+
+  "discordGuild": "",
+  "discordChannel": "",
+  
+  "socials":[
+    {
+      "name": "",
+      "type": "",
+      "server": "",
+      "handle": "",
+      "app_password": ""
+      "access_token": ""
+    }
+  ]
+  
+}

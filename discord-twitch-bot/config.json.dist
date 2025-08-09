@@ -1,0 +1,12 @@
+{
+  "TWITCH_CLIENTID"    :"",
+  "TWITCH_CLIENTSECRET":"",
+  "DISCORD_TOKEN"      :"",
+
+  "discordGuild": "",
+  "discordChannel": "",
+
+  "monitors":[
+    { "twitchUsername": "", "allowGames":[] },
+  ]
+}

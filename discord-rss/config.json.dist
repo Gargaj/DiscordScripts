@@ -1,0 +1,12 @@
+{
+  "DISCORD_TOKEN": "",
+
+  "feeds":[
+    {
+      "url": "",
+      "name": "",
+      "discordGuild": "",
+      "discordChannel": ""
+    }
+  ]
+}

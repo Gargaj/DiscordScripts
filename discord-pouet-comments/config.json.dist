@@ -1,0 +1,10 @@
+{
+  "DISCORD_TOKEN": "",
+
+  "discordGuild": "",
+  "discordChannel": "",
+
+  "monitors":[
+    { "groupID": 0 }
+  ]
+}
