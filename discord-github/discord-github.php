@@ -1,11 +1,18 @@
 <?php
+/*
+
+  NOTE: FOR THIS TO WORK YOU NEED A GITHUB WEBHOOK THAT DUMPS THE PAYLOAD INTO A JSON IN THIS DIR
+
+  e.g. something like this:
+    file_put_contents(sprintf("discord-github/blob.%s.%s.json",$action,$hash),$inputRaw);
+
+*/
 error_reporting(E_ALL & ~E_NOTICE);
 
 include_once(dirname(__FILE__) . "/../discord.inc.php");
 
 $configFile = dirname(__FILE__) . "/config.json";
 $stateFile = dirname(__FILE__) . "/.state.json";
-$releaseDataFile = dirname(__FILE__) . "/../releaseData.json";
 
 printf( "*** Starting check: %s\n",date("Y-m-d H:i:s"));
 printf( "* Config: %s\n",$configFile);
@@ -213,21 +220,6 @@ foreach($jsonz as $json)
             $msg .= sprintf("\n```%s```",$data["release"]["body"]);
           }
           $msg .= "\n";
-
-          $db = json_decode(file_get_contents($releaseDataFile),true);
-          if (!$db)
-          {
-            $db = array();
-            $db["releases"] = array();
-          }
-          $db["releases"][] = array(
-            "product" => $data["repository"]["name"],
-            "channel" => $data["organization"]["login"],
-            "version" => $data["release"]["tag_name"],
-            "url" => $data["release"]["html_url"],
-            "releaseDate" => date("Y-m-d H:i:s"),
-          );
-          file_put_contents($releaseDataFile,json_encode($db,JSON_PRETTY_PRINT));
         }
         $toDelete[] = $json;
       }
